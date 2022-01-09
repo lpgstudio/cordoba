@@ -6,6 +6,7 @@
     --dark-red: #961913;
     --cinza: rgba(196, 196, 196, 0.05);
     --cinza-medio: rgba(196, 196, 196, 0.12);
+    --cinza-medio24: rgba(196, 196, 196, 0.24);
 
     /* card */
     --red : #ff2020;
@@ -37,7 +38,56 @@ body {
     margin: 0 auto;
 }
 
+/* Slides */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-slide {
+    width: 80%;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+      bottom: -5px;
+  }
+/* SIM Slides */
+
+
 /* Header */
+header .card-frete{
+    background-color: var(--dark-red);
+    color: white;
+    text-align: center;
+}
+
 header .menu-acesso{
     width: 100%;
     border: 1px solid rgba(150, 25, 19, 0.21);
@@ -108,10 +158,11 @@ nav .busca i{
     color: rgba(150, 25, 19, 0.9);
 }
 
-nav i.fa-shopping-cart{
+nav .icons i{
     color: var(--dark-red);
     font-size: 24px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 /* Banner Principal */
@@ -134,7 +185,39 @@ nav i.fa-shopping-cart{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100;
+    height: 100%;
+    object-fit: cover;
+}
+
+#inicio .info-cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cinza-medio24);
+    padding: 15px 0;
+}
+
+.info-cards .info-card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.info-cards .info-card .text{
+    margin-left: 10px;
+}
+
+.info-cards .info-card .text h6{
+    color: var(--dark-red);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-cards .info-card .text p{
+    color: var(--dark-red);
+    font-size: 14px;
 }
 
 #inicio .container .text-box{
@@ -178,7 +261,7 @@ nav i.fa-shopping-cart{
 }
 
 #destaques .container .headline{
-    text-align: left;
+    text-align: center;
     padding-left: 20px;
 }
 
@@ -205,15 +288,18 @@ nav i.fa-shopping-cart{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
     grid-gap: 20px;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 /* cards */
 
 .product-container .card{
-    width:100%;
+    width: 250px;
+    margin-left: 15px;
     background: var(--white);
     border: 1px solid var(--dark-red);
+    display: flex;
+    flex-direction: column;
 }
 
 .product-container .card .imgbox{
@@ -235,7 +321,7 @@ nav i.fa-shopping-cart{
 }
 
 .product-container .card:hover .imgbox img{
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .action{
@@ -363,53 +449,19 @@ nav i.fa-shopping-cart{
     margin-top: 60px;
 }
 
-/* Lançamentos */
-
-#lancamentos{
+#promocao .container, 
+#destaques .container{
     position: relative;
-    padding: 120px 0 20px 0;
-}
-
-#lancamentos .container{
     display: flex;
+    flex: 1;
+    /* overflow: hidden; */
 }
 
-#lancamentos .container .content{
+.container .content{
     position: relative;
     flex: 1;
 }
 
-#lancamentos .container .content .headline{
-    width: 100%;
-    text-align: center;
-}
-
-#lancamentos .container .content .headline h4{
-    position: relative;
-    color: var(--dark-red);
-    font-weight: 700;
-    font-size: 36px;
-}
-
-#lancamentos .container .content .headline h4::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    width: 225px;
-    height: 1px;
-    background-color: var(--dark-red);
-}
-
-#lancamentos .container .content .headline h4::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    width: 225px;
-    height: 1px;
-    background-color: var(--dark-red);
-}
 
 /* Promocao */
 
@@ -419,17 +471,38 @@ nav i.fa-shopping-cart{
     padding: 45px 0 60px 0;
 }
 
-#promocao .container .headline{
-    text-align: left;
-    padding-left: 20px;
+#promocao .container .content .headline{
+    width: 100%;
+    text-align: center;
 }
 
-#promocao .container .headline h4{
+#promocao .container .content .headline h4{
+    position: relative;
     color: var(--dark-red);
-    font-size: 29px;
-    font-weight: 900;
-    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 36px;
 }
+
+#promocao .container .content .headline h4::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 20%;
+    height: 1px;
+    background-color: var(--dark-red);
+}
+
+#promocao .container .content .headline h4::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 20%;
+    height: 1px;
+    background-color: var(--dark-red);
+}
+
 
 /* Contato */
 
@@ -587,14 +660,25 @@ footer .social a img{
     height: 30px;
 }
 
-footer p{
+footer .footer-text{
+    margin: 30px 0;
+}
+
+footer .footer-text p{
     max-width: 980px;
     font-size: 12px;
     font-weight: 300;
-    margin: 0 auto;
+    margin: auto;
 }
 
 /* Responsivo */
+
+@media screen and (max-width:1120px){
+    .busca input {
+        position: relative;
+        margin-right: 0px;
+    }
+}
 
 @media screen and (max-width: 998px) {
     .menu ul{
@@ -625,7 +709,7 @@ footer p{
     .toggle{
         width: 40px;
         height: 40px;
-        background: url(../img/menu.png);
+        background: url(../img/icons/menu.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
@@ -634,7 +718,7 @@ footer p{
     }
 
     .toggle.active{
-        background: url(../img/close.png);
+        background: url(../img/icons/close.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
@@ -642,10 +726,7 @@ footer p{
         filter: invert(1);
     }
 
-    .busca input {
-        position: relative;
-        margin-right: 0px;
-    }
+    
 
     #inicio .banner {
         height: 241px;
