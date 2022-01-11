@@ -288,7 +288,7 @@ nav .icons i{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
     grid-gap: 20px;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 /* cards */
@@ -509,7 +509,6 @@ nav .icons i{
 #contato{
     position: relative;
     padding: 40px 0 120px 0;
-    border-bottom: 1px solid var(--dark-red);
 }
 
 #contato .text-box{
@@ -584,6 +583,7 @@ nav .icons i{
 #info{
     position: relative;
     padding: 30px 0 50px 0;
+    border-top: 1px solid var(--dark-red);
 }
 
 #info .container{
@@ -670,6 +670,169 @@ footer .footer-text p{
     font-weight: 300;
     margin: auto;
 }
+
+/* MODAL LOGIN */
+#modal_login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 100;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_login.active{display: flex;}
+
+#modal_login .modal-card{
+    position: relative;
+    padding: 0 80px;
+    background-color: var(--white);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20%;
+    text-align: center;
+}
+
+#modal_login .modal-card .modal-login-principal{
+    display: block;
+}
+#modal_login .modal-card .modal-login{
+    display: none;
+}
+#modal_login .modal-card .modal-registro{
+    display: none;
+}
+#modal_login .modal-card .modal-login-principal.active{
+    display: none;
+}
+#modal_login .modal-card .modal-login.active{
+    display: block;
+}
+#modal_login .modal-card .modal-registro.active{
+    display: block;
+}
+
+
+#modal_login .modal-card .modal-exit{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 15px;
+    height: 15px;
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+#modal_login .modal-card .modal-exit img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    height: 100%;
+}
+
+#modal_login .modal-card .logo{
+    margin: 50px 0 20px 0;
+}
+
+#modal_login .modal-card p{
+    color: var(--dark-red);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#modal_login .modal-card p:nth-child(5){
+    position: relative;
+    margin-top: 20px;
+}
+
+#modal_login .modal-card p:nth-child(5)::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 30%;
+    height: 2px;
+    background-color: var(--dark-red);
+}
+
+#modal_login .modal-card p:nth-child(5)::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 30%;
+    height: 2px;
+    background-color: var(--dark-red);
+}
+
+
+#modal_login .modal-card .modal-social a img{
+    height: 30px;
+    margin: 0 10px;
+}
+
+#modal_login .modal-card .btn-reg{
+    background-color: var(--dark-red);
+    border-radius: 30px;
+    border: none;
+    color: var(--white);
+    font-weight: 500;
+    padding: 5px 70px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#modal_login .modal-card .btn-login{
+    background-color: rgba(232, 232, 232, 0.5);
+    border-radius: 30px;
+    border: none;
+    color: var(--dark-red);
+    font-weight: 500;
+    padding: 5px 35px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+#modal_login .modal-card .modal-registro .modal-form .nome,
+#modal_login .modal-card .modal-registro .modal-form .email,
+#modal_login .modal-card .modal-login .modal-form .nome,
+#modal_login .modal-card .modal-login .modal-form .email{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#modal_login .modal-card .modal-registro .modal-form input,#modal_login .modal-card .modal-login .modal-form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--cinza-medio);
+    padding-left: 8px;
+}
+
+#modal_login .modal-card .modal-registro .modal-form label,#modal_login .modal-card .modal-login .modal-form label{
+    color: var(--dark-red);
+    font-size: 12px;
+    font-weight:600;
+}
+
+#modal_login .modal-card .modal-registro .btn-reg,
+#modal_login .modal-card .modal-login .btn-reg{
+    margin-bottom: 50px;
+}
+
+
+
 
 /* Responsivo */
 
