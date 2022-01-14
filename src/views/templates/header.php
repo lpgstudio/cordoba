@@ -41,7 +41,7 @@
                 <i class="fas fa-search"></i>
             </div>
             <div class="icons">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" onclick="toggleCarrinho()"></i>
                 <i class="fas fa-user" onclick="toggleModalLogin()"></i>
             </div>
         </nav>

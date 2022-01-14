@@ -39,3 +39,7 @@ function toggleLogin(){
     modalPrincipalToggle.classList.toggle('active');
 }
 
+function toggleCarrinho(){
+    var carrinhoToggle = document.querySelector('#modal_carrinho');
+    carrinhoToggle.classList.toggle('active');
+}
