@@ -38,6 +38,17 @@ body {
     margin: 0 auto;
 }
 
+.btn-forms{
+    /* max-width: 195px; */
+    background-color: var(--dark-red);
+    color: var(--white);
+    font-size: 18px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
 /* Slides */
 .swiper {
     width: 100%;
@@ -835,7 +846,7 @@ footer .footer-text p{
 #modal_carrinho{
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -150%;
     width: 500px;
     height: 100%;
     background-color: var(--white);
@@ -951,6 +962,133 @@ section.institucional{
     padding: 60px 0;
 }
 
+/* Fale-conosco */
+#fale-conosco .container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.box-menu{
+    position: relative;
+    width: 324px;
+    background-color: var(--dark-red);
+    border-radius: 30px;
+    padding: 40px 25px;
+    margin-right: 50px;
+    color: var(--white);
+    text-align: center;
+}
+.box-menu h3{
+    font-size: 36px;
+    text-align: center;
+    line-height: 48px;
+}
+#fale-conosco .box-menu a{
+    color: var(--white);
+    padding: 15px 0;
+    display: block;
+}
+.form-fale-conosco{
+    flex: 1;
+}
+.form-fale-conosco h3{
+    font-size: 48px;
+    font-weight: 500;
+}
+.form-fale-conosco form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.form-fale-conosco form label{
+    font-size: 16px;
+    font-weight: 500;
+}
+.form-fale-conosco form input{
+    background-color: var(--cinza-medio24);
+    border: none;
+    padding-left: 8px;
+    height: 35px;
+    margin-bottom: 15px;
+}
+.form-fale-conosco form textarea{
+    background-color: var(--cinza-medio24);
+    border: none;
+    padding-left: 8px;
+    padding-top: 8px;
+    height: 100px;
+    margin-bottom: 15px;
+    resize: none;
+}
+.form-fale-conosco form button{
+    max-width: 195px;
+    background-color: var(--dark-red);
+    color: var(--white);
+    font-size: 18px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Rastrear pedido */
+#rastreamento-de-pedido .container,
+#rastreamento-de-pedido .container h3{
+    text-align: center;
+    color: var(--dark-red);
+}
+#rastreamento-de-pedido .container h3{
+    font-size: 54px;
+    font-weight: 300;
+}
+#rastreamento-de-pedido .container p{
+    margin-bottom: 30px;
+}
+#rastreamento-de-pedido .container form{
+    display: flex;
+    flex-direction: column;
+    max-width: 610px;
+    margin: 0 auto;
+}
+
+#rastreamento-de-pedido .container form input{
+    background-color: var(--cinza-medio24);
+    border: none;
+    padding-left: 8px;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+/* Categoria */
+#categoria{
+    background-color: var(--cinza);
+    padding-top: 50px;
+}
+#categoria .container .headline h4{
+    color: var(--dark-red);
+    font-size: 24px;
+    padding-left: 35px;
+}
+.menu-categoria{
+    padding: 30px 0 0 20px;
+}
+.menu-categoria form select{
+    border: none;
+    background-color: transparent;
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.menu-categoria form button{
+    font-size: 14px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
 
 /* Responsivo */
 
@@ -1068,6 +1206,22 @@ section.institucional{
     #lancamentos .container .content .headline h4::after,
     #lancamentos .container .content .headline h4::before{
         width: 100px;
+    }
+
+    #fale-conosco .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .form-fale-conosco {
+        width: 100%;
+    }
+
+    .box-menu {
+        margin-right: 0px;
+        margin-bottom: 50px;
     }
 
 }
